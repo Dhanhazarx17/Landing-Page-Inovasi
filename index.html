@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemetaan Sekolah - Kecamatan Medan Denai</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+    
+<body class="bg-gray-50 font-sans">
+    <!-- Decorative blobs -->
+    <div class="blob bg-blue-300 w-96 h-96 top-0 right-0"></div>
+    <div class="blob bg-cyan-200 w-64 h-64 bottom-96 left-10"></div>
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white p-2 rounded-full shadow-lg">
+                        <i class="fas fa-school text-xl"></i>
+                    </div>
+                    <span class="font-bold text-xl gradient-text">Peta Sekolah Medan Denai</span>
+                </div>
+                <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition font-medium">Beranda</a>
+                    <a href="#statistik" class="text-gray-700 hover:text-blue-500 transition font-medium">Data Sekolah</a>
+                    <a href="#map-section" class="text-gray-700 hover:text-blue-500 transition font-medium">Peta</a>
+                    <a href="#testimoni" class="text-gray-700 hover:text-blue-500 transition font-medium">Testimoni</a>
+                    <a href="#" class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-4 py-2 rounded-lg hover:shadow-lg transition transform hover:-translate-y-1">Kontak</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden h-0 overflow-hidden">
+                <div class="py-4 space-y-4">
+                    <a href="#" class="block text-gray-700 hover:text-blue-500 transition pl-4">Beranda</a>
+                    <a href="#statistik" class="block text-gray-700 hover:text-blue-500 transition pl-4">Data Sekolah</a>
+                    <a href="#map-section" class="block text-gray-700 hover:text-blue-500 transition pl-4">Peta</a>
+                    <a href="#testimoni" class="block text-gray-700 hover:text-blue-500 transition pl-4">Testimoni</a>
+                    <a href="#" class="block text-gray-700 hover:text-blue-500 transition pl-4 font-medium">Kontak</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative py-20 px-4 overflow-hidden bg-cover bg-center bg-no-repeat" style="background-image: url('images/map-medan.png');">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
+                    <div class="inline-block bg-blue-100 text-blue-600 px-4 py-1 rounded-full mb-4 font-medium">
+                        #PendidikanBerkualitas
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 leading-tight">
+                        <span class="gradient-text">Pemetaan Sekolah</span> di Kecamatan Medan Denai
+                    </h1>
+                    <p class="text-gray-600 text-lg mb-12">
+                        Temukan informasi lengkap tentang sekolah-sekolah di Kecamatan Medan Denai. Mulai dari lokasi, fasilitas, hingga prestasi yang telah diraih.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160">
+  <path fill="#ffffff" fill-opacity="1" d="M0,64L48,74.7C96,85,192,107,288,101.3C384,96,480,64,576,64C672,64,768,96,864,96C960,96,1056,64,1152,48C1248,32,1344,32,1392,32L1440,32L1440,160L1392,160C1344,160,1248,160,1152,160C1056,160,960,160,864,160C768,160,672,160,576,160C480,160,384,160,288,160C192,160,96,160,48,160L0,160Z"></path>
+</svg>
+                <path fill="#ffffff" fill-opacity="1" d="M0,96L48,106.7C96,117,192,139,288,133.3C384,128,480,96,576,96C672,96,768,128,864,128C960,128,1056,96,1152,80C1248,64,1344,64,1392,64L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Mengapa Menggunakan Platform Kami?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Berbagai fitur yang membantu Anda menemukan informasi sekolah dengan mudah dan cepat</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover-lift border border-gray-100">
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white w-16 h-16 rounded-2xl flex items-center justify-center mb-6 mx-auto transform -rotate-6">
+                        <i class="fas fa-map-marked-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 text-center">Pemetaan Sekolah</h3>
+                    <p class="text-gray-600 text-center">Visualisasi lokasi sekolah di Kecamatan Medan Denai dengan peta interaktif yang mudah dipahami.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg hover-lift border border-gray-100">
+                    <div class="bg-gradient-to-br from-green-500 to-green-600 text-white w-16 h-16 rounded-2xl flex items-center justify-center mb-6 mx-auto transform rotate-6">
+                        <i class="fas fa-info-circle text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 text-center">Informasi Lengkap</h3>
+                    <p class="text-gray-600 text-center">Data akurat tentang fasilitas, prestasi, dan program unggulan setiap sekolah di Medan Denai.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg hover-lift border border-gray-100">
+                    <div class="bg-gradient-to-br from-purple-500 to-purple-600 text-white w-16 h-16 rounded-2xl flex items-center justify-center mb-6 mx-auto transform -rotate-6">
+                        <i class="fas fa-chart-bar text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 text-center">Analisis Data</h3>
+                    <p class="text-gray-600 text-center">Statistik dan perbandingan antar sekolah untuk membantu dalam pengambilan keputusan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Statistics -->
+    <section id="statistik" class="py-20 bg-gradient-to-r from-blue-50 to-cyan-50 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-10 left-10 w-32 h-32 rounded-full bg-blue-300"></div>
+            <div class="absolute bottom-10 right-10 w-32 h-32 rounded-full bg-cyan-300"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-yellow-200"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-block bg-purple-100 text-purple-600 px-4 py-1 rounded-full mb-4 font-medium">
+                    Statistik Pendidikan
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Data Sekolah di Medan Denai</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Data terkini jumlah sekolah di Kecamatan Medan Denai</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
+                        <i class="fas fa-school text-blue-500 text-2xl"></i>
+                    </div>
+                    <div class="text-4xl font-bold text-blue-500 mb-2 counter">68</div>
+                    <div class="text-gray-600 font-medium">SD</div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                        <i class="fas fa-chalkboard-teacher text-green-500 text-2xl"></i>
+                    </div>
+                    <div class="text-4xl font-bold text-green-500 mb-2 counter">19</div>
+                    <div class="text-gray-600 font-medium">SMP</div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4">
+                        <i class="fas fa-graduation-cap text-purple-500 text-2xl"></i>
+                    </div>
+                    <div class="text-4xl font-bold text-purple-500 mb-2 counter">19</div>
+                    <div class="text-gray-600 font-medium">SMA</div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
+                        <i class="fas fa-building text-orange-500 text-2xl"></i>
+                    </div>
+                    <div class="text-4xl font-bold text-orange-500 mb-2 counter">106</div>
+                    <div class="text-gray-600 font-medium">Total</div>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+  <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">Distribusi Sekolah di Kecamatan Medan Denai</h3>
+  
+  <div class="bg-gray-50 p-4 rounded-lg shadow-inner flex justify-center items-center">
+    <img src="images/distribusi.png" alt="Grafik distribusi sekolah" class="rounded-lg max-w-full h-auto border border-gray-300">
+  </div>
+
+  <p class="text-sm text-gray-500 mt-4 text-center italic">Sumber data: Data Sekolah Kecamatan Medan Denai, 2025</p>
+</div>
+        </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section id="map-section" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <div class="inline-block bg-blue-100 text-blue-600 px-4 py-1 rounded-full mb-4 font-medium">
+                        Peta Interaktif
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Temukan Sekolah di Sekitar Anda</h2>
+                    <p class="text-gray-600 mb-6">
+                        Jelajahi peta interaktif kami untuk menemukan lokasi sekolah di Kecamatan Medan Denai. Klik pada tombol lihat peta lengkap  dibawah
+                    </p>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg mb-6 border-l-4 border-blue-500">
+                        <h4 class="font-semibold text-blue-800 mb-2">Cara Menggunakan Peta:</h4>
+                        <ul class="space-y-2 text-blue-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mr-2 mt-1 text-blue-500"></i>
+                                <span>Geser peta untuk menjelajahi area</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mr-2 mt-1 text-blue-500"></i>
+                                <span>Klik ikon sekolah untuk melihat detail</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- Tombol Tambahan untuk Masuk ke Peta Detail -->
+                    <div class="mt-6">
+                        <a href="https://school-map-two.vercel.app/" target="_blank" class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition flex items-center justify-center w-full md:w-auto">
+                            <i class="fas fa-map-marked-alt mr-2"></i> Buka Peta Lengkap
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 transform rotate-3 rounded-xl opacity-20"></div>
+                        <div class="relative bg-white p-2 rounded-xl shadow-xl">
+                            <!-- Interactive map container -->
+                            <div id="map-container" class="relative overflow-hidden rounded-lg h-96">
+                                <img src="images/map-medan.png" alt="Peta sekolah interaktif" class="w-full h-full object-cover"/>
+                                
+                                <!-- Sample map markers -->
+                                <div class="absolute top-1/4 left-1/4 school-marker cursor-pointer" data-school="SD Negeri 1 Medan Denai" data-type="sd">
+                                    <div class="bg-red-500 text-white p-2 rounded-full shadow-lg pulse">
+                                        <i class="fas fa-school"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="absolute top-1/2 left-1/3 school-marker cursor-pointer" data-school="SMP Negeri 2 Medan Denai" data-type="smp">
+                                    <div class="bg-blue-500 text-white p-2 rounded-full shadow-lg pulse">
+                                        <i class="fas fa-school"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="absolute bottom-1/4 right-1/4 school-marker cursor-pointer" data-school="SMA Negeri 1 Medan Denai" data-type="sma">
+                                    <div class="bg-green-500 text-white p-2 rounded-full shadow-lg pulse">
+                                        <i class="fas fa-school"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="absolute top-1/3 right-1/3 school-marker cursor-pointer" data-school="SD Negeri 3 Medan Denai" data-type="sd">
+                                    <div class="bg-purple-500 text-white p-2 rounded-full shadow-lg pulse">
+                                        <i class="fas fa-school"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="absolute bottom-1/3 left-1/2 school-marker cursor-pointer" data-school="SMP Swasta Harapan Medan Denai" data-type="smp">
+                                    <div class="bg-orange-500 text-white p-2 rounded-full shadow-lg pulse">
+                                        <i class="fas fa-school"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimoni" class="py-20 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-16">
+          <div class="inline-block bg-yellow-100 text-yellow-600 px-4 py-1 rounded-full mb-4 font-medium">
+            Testimoni
+          </div>
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Apa Kata Mereka?</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Testimoni dari pengguna layanan pemetaan sekolah kami</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Testimoni 1 -->
+          <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+            <div class="flex items-center mb-4">
+              <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 shadow-md">
+                <i class="fas fa-user text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800">Bapak Ahmad</h4>
+                <p class="text-gray-500 text-sm">Orang Tua Murid</p>
+              </div>
+            </div>
+            <div class="mb-4">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-4">
+              "Sangat membantu dalam mencari sekolah terdekat untuk anak saya. Informasinya lengkap dan akurat."
+            </p>
+            <p class="text-sm text-gray-500 italic">2 minggu yang lalu</p>
+          </div>
+
+          <!-- Testimoni 2 -->
+          <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+            <div class="flex items-center mb-4">
+              <div class="bg-gradient-to-r from-green-500 to-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 shadow-md">
+                <i class="fas fa-user-tie text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800">Ibu Siti</h4>
+                <p class="text-gray-500 text-sm">Kepala Sekolah</p>
+              </div>
+            </div>
+            <div class="mb-4">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-4">
+              "Platform ini memudahkan kami dalam menyampaikan informasi sekolah kepada masyarakat."
+            </p>
+            <p class="text-sm text-gray-500 italic">1 minggu yang lalu</p>
+          </div>
+
+          <!-- Testimoni 3 -->
+          <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+            <div class="flex items-center mb-4">
+              <div class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 shadow-md">
+                <i class="fas fa-user-graduate text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800">Siswa Andi</h4>
+                <p class="text-gray-500 text-sm">Siswa</p>
+              </div>
+            </div>
+            <div class="mb-4">
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-4">
+              "Peta interaktifnya sangat membantu saya memilih sekolah yang sesuai dengan minat saya."
+            </p>
+            <p class="text-sm text-gray-500 italic">3 hari yang lalu</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-white border-t border-gray-200 py-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Brand and Description -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white p-2 rounded-full shadow-lg">
+                            <i class="fas fa-school text-xl"></i>
+                        </div>
+                        <span class="ml-3 font-bold text-lg gradient-text">PetaSekolah Medan Denai</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">
+                        Platform untuk memudahkan pencarian informasi dan lokasi sekolah di Kecamatan Medan Denai secara cepat, akurat, dan interaktif.
+                    </p>
+                </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="font-semibold text-gray-800 mb-4">Navigasi</h4>
+                <ul class="space-y-2 text-gray-600 text-sm">
+                    <li><a href="#" class="hover:text-blue-500 transition">Beranda</a></li>
+                    <li><a href="#statistik" class="hover:text-blue-500 transition">Data Sekolah</a></li>
+                    <li><a href="#map-section" class="hover:text-blue-500 transition">Peta</a></li>
+                    <li><a href="#testimoni" class="hover:text-blue-500 transition">Testimoni</a></li>
+                    <li><a href="#" class="hover:text-blue-500 transition">Kontak</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h4 class="font-semibold text-gray-800 mb-4">Kontak Kami</h4>
+                <ul class="text-gray-600 text-sm space-y-2">
+                    <li><i class="fas fa-envelope mr-2 text-blue-500"></i> info@peta-sekolah.id</li>
+                    <li><i class="fas fa-phone mr-2 text-blue-500"></i> +62 812 3456 7890</li>
+                    <li><i class="fas fa-map-marker-alt mr-2 text-blue-500"></i> Medan Denai, Kota Medan</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-200 mt-10 pt-6 text-center text-sm text-gray-500">
+            &copy; 2025 PetaSekolah Medan Denai. Semua Hak Dilindungi.
+        </div>
+    </div>
+</footer>
+
+<!-- Load JavaScript file -->
+<script src="script.js"></script>
+</body>
+</html>
+
+
+

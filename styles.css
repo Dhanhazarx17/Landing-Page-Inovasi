@@ -1,0 +1,253 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #374151;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Gradient Text Effect */
+.gradient-text {
+  background: linear-gradient(to right, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* Decorative Blobs */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* Animation Effects */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover lift effect for cards */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Styles */
+.mobile-menu {
+  transition: height 0.3s ease;
+}
+
+.mobile-menu.open {
+  height: auto;
+}
+
+/* School Marker Pulse Animation */
+.pulse {
+  position: relative;
+}
+
+.pulse::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0.6;
+  z-index: -1;
+  animation: pulse 1.5s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  70% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Counter Animation */
+.counter {
+  animation: countUp 2s ease-out forwards;
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Filter Button Active State */
+.filter-btn.active {
+  background-color: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+/* School Marker Hover Effect */
+.school-marker {
+  transform: scale(1);
+  transition: transform 0.2s ease;
+  z-index: 10;
+}
+
+.school-marker:hover {
+  transform: scale(1.2);
+  z-index: 20;
+}
+
+.school-marker:hover::after {
+  content: attr(data-school);
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* School Info Popup */
+.school-info-popup {
+  position: absolute;
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  z-index: 30;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.school-info-popup.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Testimonial Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .blob {
+    display: none;
+  }
+  
+  #map-section .bg-white.rounded-lg {
+    position: static;
+    margin-top: 1rem;
+  }
+}
+
+/* JavaScript Controlled Classes */
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  display: block;
+}
+
+/* School Types Color Coding */
+[data-type="sd"] .pulse::after {
+  background-color: rgba(239, 68, 68, 0.5); /* red-500 */
+}
+
+[data-type="smp"] .pulse::after {
+  background-color: rgba(59, 130, 246, 0.5); /* blue-500 */
+}
+
+[data-type="sma"] .pulse::after {
+  background-color: rgba(16, 185, 129, 0.5); /* green-500 */
+}
+
+/* Animations for Feature Cards */
+.bg-white.p-8.rounded-xl {
+  transition: all 0.3s ease;
+}
+
+.bg-white.p-8.rounded-xl:hover .bg-gradient-to-br {
+  transform: rotate(0);
+}
+
+/* Interactive Map Styles */
+#map-container {
+  position: relative;
+  background-color: #f0f7ff;
+}
+
+/* Scroll Animation */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile Menu JavaScript Support */
+#mobile-menu-button {
+  cursor: pointer;
+}
+
